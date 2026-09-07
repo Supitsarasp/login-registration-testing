@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration - Demo App</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="register">
+  <div class="card">
+    <h1>Registration</h1>
+    <form id="registerForm" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password">
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" name="confirm" placeholder="Confirm your password">
+
+      <button type="submit" id="registerBtn">Register</button>
+    </form>
+    <div id="msg" class="msg"></div>
+    <p class="nav">Already have an account? <a href="login.html">Login here</a></p>
+    <p class="reset"><a href="#" id="resetData">Reset demo data</a></p>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
