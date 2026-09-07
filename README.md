@@ -1,68 +1,80 @@
-# Login & Registration Testing — Manual Testing Portfolio
+Login & Registration Testing
+ในโปรเจกต์นี้จะทดลองทดสอบระบบ สมัครสมาชิกและ Login ของเว็บไซต์ตัวอย่าง โดยเน้นการทดสอบแบบ Manual Testing และไม่ได้เขียนโปรแกรม
 
-โปรเจกต์ Manual Testing สำหรับนักศึกษา / ผู้เริ่มต้นสาย QA — ทดสอบระบบสมัครสมาชิกและเข้าสู่ระบบ (Login & Registration) ของเว็บไซต์ตัวอย่าง ครบตั้งแต่ Scenario → Test Case → ทดสอบ → Bug Report → สรุปผล โดยไม่มีการเขียนโค้ด
+ทำอะไรในโปรเจกต์นี้
 
-## Project Overview
+สิ่งที่ทดสอบมี 2 ส่วนหลัก
 
-ทดสอบเว็บไซต์ตัวอย่างที่มี 2 หน้า คือ Registration (Name, Email, Password, Confirm Password) และ Login (Email, Password) โดยออกแบบ Test Scenario และ Test Case ครอบคลุมทั้ง Positive และ Negative Testing จากนั้นทดสอบด้วยตนเองผ่าน Web Browser บันทึกผล รายงาน Bug และสรุปผลการทดสอบ เพื่อฝึกกระบวนการทดสอบซอฟต์แวร์ตั้งแต่ต้นจนจบเหมือนที่ QA ทำในงานจริง
+Registration
 
-## My Role
+กรอกชื่อ
+กรอก Email
+กรอก Password
+กรอก Confirm Password
+กดสมัครสมาชิก
 
-- Software Tester
+Login
 
-## Testing
+กรอก Email
+กรอก Password
+กด Login
 
-- Manual Testing
-- Functional Testing
-- Positive Testing
-- Negative Testing
+โดยจะลองทั้งกรณีที่กรอกข้อมูลถูกต้องและกรอกข้อมูลผิด เพื่อดูว่าระบบทำงานเป็นไปตามที่ควรจะเป็นหรือไม่
 
-## Tools
+สิ่งที่ได้ทำ
+เขียน Test Scenario 10 รายการ
+เขียน Test Case 15 เคส
+ทดสอบ Positive Case
+ทดสอบ Negative Case
+บันทึกผลการทดสอบ
+เขียน Bug Report จากปัญหาที่พบ
+สรุปผลการทดสอบ
+ตัวอย่างการทดสอบ
 
-- Excel / Google Sheets
-- Web Browser (Chrome)
+Login ด้วยข้อมูลที่ถูกต้อง
 
-## สิ่งที่ทำในโปรเจกต์นี้
+กรอก Email และ Password ที่ถูกต้อง แล้วกด Login
 
-1. อ่าน Requirement และออกแบบ **Test Scenario** 10 รายการ
-2. เขียน **Test Cases** 15 เคส พร้อม Test Data, Steps, Expected Result
-3. ทดสอบ **Positive Testing** (5 เคส) และ **Negative Testing** (10 เคส)
-4. บันทึกผลและเขียน **Bug Report** 3 รายการ ตามรูปแบบมาตรฐาน
-5. สรุปผลใน **Test Summary Report**
+Expected Result:
+ผู้ใช้สามารถเข้าสู่ระบบได้
 
-## What I Learned
+นอกจากนี้ยังมีการลองกรณีอื่น ๆ เช่น Password ผิด, ไม่กรอก Email หรือกรอก Email ไม่ถูกต้อง
 
-- การออกแบบ Test Scenario จาก Requirement
-- การเขียน Test Case ให้ครบถ้วน (Test Data, Steps, Expected Result)
-- การทดสอบ Positive Case และ Negative Case
-- การเขียน Bug Report ที่มี Steps to Reproduce ชัดเจน
-- การกำหนด Severity ของ Bug
-- การสรุปผลการทดสอบ (Test Summary) ให้ทีมเข้าใจ
+ผลการทดสอบ
+รายการ	จำนวน
+Test Scenario	10
+Test Case	15
+Passed	12
+Failed	3
+Bug ที่พบ	3
 
-## Test Results
+Pass Rate: 80%
 
-| รายการ | จำนวน |
-|--------|-------|
-| Test Scenarios | 10 |
-| Test Cases | 15 |
-| Passed | 12 |
-| Failed | 3 |
-| Bugs Found | 3 (High 1 / Medium 1 / Low 1) |
-| Pass Rate | 80% |
+จากการทดสอบพบว่าระบบสามารถทำงานได้ตามที่กำหนดในหลายส่วน แต่ยังพบปัญหา 3 จุดที่ควรแก้ไข
 
-**สรุป:** ระบบสามารถทำงานตาม Requirement ส่วนใหญ่ได้ (ฟังก์ชันหลักผ่านทั้งหมด) แต่พบปัญหา 3 จุดที่ควรแก้ไขก่อนนำระบบไปใช้งานจริง — โดยเฉพาะ BUG-003 (หน้าเว็บว่างเมื่อสมัครด้วย Email ซ้ำ, Severity: High) ที่ควรแก้เป็นอันดับแรก
+Bug ที่พบ
 
-## โครงสร้างโปรเจกต์
+ตัวอย่าง Bug ที่พบคือ เมื่อสมัครสมาชิกด้วย Email ที่มีอยู่แล้ว ระบบแสดงหน้าเว็บว่าง แทนที่จะแจ้งเตือนผู้ใช้ว่า Email นี้ถูกใช้งานแล้ว
 
-```
-docs/
-├── 01_Test_Scenarios.md      Test Scenario 10 รายการ + Requirements
-├── 02_Test_Cases.md          Test Cases 15 เคส (Positive 5 / Negative 10)
-├── 03_Positive_Testing.md    ตัวอย่าง Positive Testing 5 เคส
-├── 04_Negative_Testing.md    ตัวอย่าง Negative Testing 5 เคส
-├── 05_Bug_Reports.md         Bug Report 3 รายการ
-└── 06_Test_Summary.md        สรุปผลการทดสอบ
-Login_Registration_Test_Suite.xlsx   ไฟล์ Excel รวมชุดทดสอบทั้งหมด
-```
+รายละเอียดของ Bug และขั้นตอนการทดสอบอยู่ในไฟล์ Bug Reports
 
+Tools ที่ใช้
+Excel
+Google Sheets
+Google Chrome
+Project Files
+Login-Registration-Testing/
+│
+├── Test_Scenarios
+├── Test_Cases
+├── Positive_Testing
+├── Negative_Testing
+├── Bug_Reports
+├── Test_Summary
+└── Login_Registration_Test_Suite.xlsx
+สิ่งที่ได้เรียนรู้
+
+โปรเจกต์นี้ทำให้ได้ฝึกตั้งแต่การอ่าน Requirement แล้วนำมาคิด Test Case รวมถึงการลองคิดกรณีที่ผู้ใช้อาจกรอกข้อมูลผิด และการเขียน Bug Report ให้คนอื่นเข้าใจปัญหาได้ง่ายขึ้น
+
+เป็นโปรเจกต์แรกที่ทำเพื่อฝึกด้าน Software Testing และนำไปใช้เป็นส่วนหนึ่งของ Portfolio สำหรับสมัครฝึกงาน
 > ไฟล์ `Login_Registration_Test_Suite.xlsx` เปิดได้ด้วย Excel หรือนำเข้า Google Sheets ได้ทันที
